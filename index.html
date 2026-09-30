@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Healthcare consulting for operational improvement, data analytics, EHR optimization, and revenue cycle performance."
+  />
+  <title>Altimeter Healthcare Advisory | Healthcare Performance Consulting</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --navy: #0c2d48;
+      --navy-dark: #071f33;
+      --teal: #147d88;
+      --teal-dark: #0f6570;
+      --aqua: #dff5f2;
+      --aqua-light: #f0fbfa;
+      --sky: #eaf3f8;
+      --white: #ffffff;
+      --page: #f7fafc;
+      --text: #22303a;
+      --muted: #5f6f7a;
+      --line: #dce7ec;
+      --shadow: 0 18px 45px rgba(12, 45, 72, 0.1);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --max-width: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--page);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-soft {
+      background: var(--aqua-light);
+    }
+
+    .section-white {
+      background: var(--white);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 14px;
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 28px;
+      height: 2px;
+      content: "";
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      color: var(--navy);
+      font-family: "Manrope", Arial, sans-serif;
+      line-height: 1.16;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin-bottom: 22px;
+      font-size: clamp(2.6rem, 5vw, 5.2rem);
+      letter-spacing: -0.06em;
+    }
+
+    h2 {
+      max-width: 720px;
+      margin-bottom: 18px;
+      font-size: clamp(2rem, 3.8vw, 3.3rem);
+      letter-spacing: -0.045em;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.17rem;
+      letter-spacing: -0.025em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .section-intro {
+      max-width: 670px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.2s ease, background-color 0.2s ease,
+        border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--teal);
+      box-shadow: 0 10px 22px rgba(20, 125, 136, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-dark);
+    }
+
+    .btn-outline {
+      color: var(--navy);
+      border-color: rgba(255, 255, 255, 0.65);
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: var(--white);
+    }
+
+    /* Navigation */
+    .site-header {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      right: 0;
+      left: 0;
+      border-bottom: 1px solid transparent;
+      transition: background-color 0.25s ease, box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .site-header.scrolled {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 8px 30px rgba(12, 45, 72, 0.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 80px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: 1.02rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .site-header.scrolled .logo {
+      color: var(--navy);
+    }
+
+    .logo-mark {
+      position: relative;
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      border: 3px solid currentColor;
+      border-radius: 50%;
+    }
+
+    .logo-mark::after {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      bottom: 4px;
+      left: 4px;
+      border-radius: 50%;
+      content: "";
+      background: var(--teal);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.93rem;
+      font-weight: 600;
+    }
+
+    .site-header.scrolled .nav-links {
+      color: var(--text);
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    .nav-contact {
+      min-height: 40px;
+      padding: 0 16px;
+      padding-top: 8px;
+      color: var(--navy) !important;
+      border-radius: 999px;
+      background: var(--white);
+    }
+
+    .site-header.scrolled .nav-contact {
+      color: var(--white) !important;
+      background: var(--teal);
+    }
+
+    .menu-button {
+      display: none;
+      padding: 7px;
+      color: var(--white);
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .site-header.scrolled .menu-button {
+      color: var(--navy);
+    }
+
+    .menu-button span {
+      display: block;
+      width: 25px;
+      height: 2px;
+      margin: 5px 0;
+      border-radius: 2px;
+      background: currentColor;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 760px;
+      padding: 170px 0 100px;
+      color: var(--white);
+      background:
+        linear-gradient(105deg, rgba(7, 31, 51, 0.97) 0%, rgba(12, 45, 72, 0.95) 48%, rgba(15, 101, 112, 0.86) 100%);
+    }
+
+    .hero::before {
+      position: absolute;
+      top: -180px;
+      right: -170px;
+      width: 620px;
+      height: 620px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 50%;
+      content: "";
+      box-shadow:
+        0 0 0 70px rgba(255, 255, 255, 0.035),
+        0 0 0 140px rgba(255, 255, 255, 0.025);
+    }
+
+    .hero::after {
+      position: absolute;
+      bottom: -260px;
+      left: 44%;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      content: "";
+      background: rgba(20, 125, 136, 0.3);
+      filter: blur(2px);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.05fr 0.75fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .hero h1 {
+      color: var(--white);
+    }
+
+    .hero .eyebrow {
+      color: #8ce3df;
+    }
+
+    .hero-copy {
+      max-width: 630px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.16rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 42px;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.9rem;
+    }
+
+    .hero-trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-trust span::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      content: "";
+      background: #85e1dc;
+    }
+
+    .hero-panel {
+      position: relative;
+      padding: 34px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.19);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.16);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-panel::after {
+      position: absolute;
+      top: -60px;
+      right: -40px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      content: "";
+      background: rgba(152, 237, 232, 0.13);
+    }
+
+    .panel-label {
+      margin-bottom: 25px;
+      color: #b9f6f1;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .metric {
+      padding: 18px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.17);
+    }
+
+    .metric:first-of-type {
+      border-top: 0;
+    }
+
+    .metric-value {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--white);
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .metric-label {
+      color: rgba(255, 255, 255, 0.73);
+      font-size: 0.9rem;
+    }
+
+    /* Overview */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 88px;
+      align-items: start;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 16px;
+      margin: 30px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 34px;
+      color: var(--text);
+    }
+
+    .check-list li::before {
+      position: absolute;
+      top: 3px;
+      left: 0;
+      display: grid;
+      width: 21px;
+      height: 21px;
+      color: var(--teal-dark);
+      border-radius: 50%;
+      content: "✓";
+      place-items: center;
+      background: var(--aqua);
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .insight-card {
+      padding: 38px;
+      border-radius: var(--radius-lg);
+      background: var(--navy);
+      box-shadow: var(--shadow);
+    }
+
+    .insight-card h3 {
+      color: var(--white);
+      font-size: 1.42rem;
+    }
+
+    .insight-card p {
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .insight-list {
+      display: grid;
+      gap: 17px;
+      margin-top: 27px;
+    }
+
+    .insight-item {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      color: var(--white);
+    }
+
+    .insight-number {
+      display: grid;
+      flex: 0 0 33px;
+      width: 33px;
+      height: 33px;
+      color: var(--navy);
+      border-radius: 9px;
+      place-items: center;
+      background: #8ce3df;
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .insight-item strong {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 0.95rem;
+    }
+
+    .insight-item span {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.87rem;
+    }
+
+    /* Services */
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      min-height: 300px;
+      padding: 29px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      transition: transform 0.25s ease, box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .service-card:hover {
+      border-color: rgba(20, 125, 136, 0.35);
+      box-shadow: 0 20px 40px rgba(12, 45, 72, 0.1);
+      transform: translateY(-6px);
+    }
+
+    .service-icon {
+      display: grid;
+      width: 51px;
+      height: 51px;
+      margin-bottom: 28px;
+      color: var(--teal-dark);
+      border-radius: 14px;
+      place-items: center;
+      background: var(--aqua);
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: 1.16rem;
+      font-weight: 800;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    /* Process */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .process-step {
+      position: relative;
+      padding: 0 22px 0 0;
+    }
+
+    .process-step:not(:last-child)::after {
+      position: absolute;
+      top: 22px;
+      right: -8px;
+      width: 31px;
+      height: 1px;
+      content: "";
+      background: #9bc6ca;
+    }
+
+    .step-number {
+      display: grid;
+      width: 47px;
+      height: 47px;
+      margin-bottom: 22px;
+      color: var(--white);
+      border-radius: 50%;
+      place-items: center;
+      background: var(--teal);
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    /* Outcomes */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 45px;
+    }
+
+    .outcome {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--white);
+    }
+
+    .outcome-line {
+      width: 39px;
+      height: 4px;
+      margin-bottom: 21px;
+      border-radius: 4px;
+      background: var(--teal);
+    }
+
+    .outcome p {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    /* Contact */
+    .contact {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .contact::after {
+      position: absolute;
+      right: -130px;
+      bottom: -160px;
+      width: 520px;
+      height: 520px;
+      border: 55px solid rgba(140, 227, 223, 0.08);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .contact-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .contact h2 {
+      color: var(--white);
+    }
+
+    .contact-copy {
+      max-width: 600px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 1.08rem;
+    }
+
+    .contact-card {
+      padding: 33px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .contact-card h3 {
+      color: var(--white);
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 15px;
+      margin: 22px 0 28px;
+    }
+
+    .contact-detail {
+      color: rgba(255, 255, 255, 0.77);
+      font-size: 0.94rem;
+    }
+
+    .contact-detail strong {
+      display: block;
+      margin-bottom: 2px;
+      color: #9bece7;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 26px 0;
+      color: #a9bdc8;
+      background: var(--navy-dark);
+      font-size: 0.86rem;
+    }
+
+    .footer-content {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .footer a:hover {
+      color: var(--white);
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-grid,
+      .overview-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-panel {
+        max-width: 580px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 42px;
+      }
+
+      .process-step:nth-child(2)::after {
+        display: none;
+      }
+
+      .outcomes-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .nav {
+        min-height: 70px;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        left: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px;
+        color: var(--text) !important;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--white);
+        box-shadow: 0 20px 40px rgba(12, 45, 72, 0.13);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px;
+      }
+
+      .nav-contact {
+        margin-top: 5px;
+        color: var(--white) !important;
+        text-align: center;
+        background: var(--teal);
+      }
+
+      .hero {
+        padding-top: 140px;
+      }
+
+      .hero-grid {
+        gap: 45px;
+      }
+
+      .hero-panel {
+        padding: 27px;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .services-grid,
+      .outcomes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .process-step {
+        padding-right: 0;
+      }
+
+      .process-step:not(:last-child)::after {
+        display: none;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        width: min(calc(100% - 30px), var(--max-width));
+      }
+
+      h1 {
+        font-size: 2.45rem;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-trust {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="Altimeter Healthcare Advisory home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>ALTIMETER HEALTHCARE</span>
+      </a>
+
+      <button class="menu-button" id="menuButton" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#outcomes">Outcomes</a>
+        <a href="#contact" class="nav-contact">Contact Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Healthcare performance consulting</p>
+
+          <h1>Better operations. Stronger financial performance. Better care.</h1>
+
+          <p class="hero-copy">
+            We help healthcare organizations turn complex operational,
+            financial, and technology challenges into practical strategies
+            that create measurable and sustainable progress.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Schedule a Consultation</a>
+            <a class="btn btn-outline" href="#services">Explore Our Services</a>
+          </div>
+
+          <div class="hero-trust" aria-label="Organizations we support">
+            <span>Hospitals & Health Systems</span>
+            <span>Physician Organizations</span>
+            <span>Healthcare Technology Teams</span>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Our healthcare consulting focus">
+          <p class="panel-label">Focused on what matters</p>
+
+          <div class="metric">
+            <span class="metric-value">Operational clarity</span>
+            <span class="metric-label">Make data, workflow, and performance easier to understand.</span>
+          </div>
+
+          <div class="metric">
+            <span class="metric-value">Practical execution</span>
+            <span class="metric-label">Move from analysis and recommendations to meaningful action.</span>
+          </div>
+
+          <div class="metric">
+            <span class="metric-value">Lasting capability</span>
+            <span class="metric-label">Equip internal teams to sustain improvements over time.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-white" id="about">
+      <div class="container overview-grid">
+        <div>
+          <p class="eyebrow">Our perspective</p>
+          <h2>Healthcare consulting built for measurable progress.</h2>
+          <p class="section-intro">
+            Healthcare leaders are balancing financial pressure, staffing
+            challenges, evolving payment models, complex technology, and the
+            need to continuously improve patient experience.
+          </p>
+
+          <ul class="check-list">
+            <li>Identify high-impact operational and financial opportunities.</li>
+            <li>Turn fragmented information into clear leadership decisions.</li>
+            <li>Improve workflows while respecting the realities of frontline teams.</li>
+            <li>Build implementation plans with ownership, milestones, and accountability.</li>
+          </ul>
+        </div>
+
+        <div class="insight-card">
+          <h3>More than a recommendation report</h3>
+          <p>
+            We work with your people, processes, and systems to help make
+            improvement programs achievable in the real world.
+          </p>
+
+          <div class="insight-list">
+            <div class="insight-item">
+              <span class="insight-number">01</span>
+              <div>
+                <strong>Understand the current state</strong>
+                <span>Review processes, systems, performance indicators, and organizational priorities.</span>
+              </div>
+            </div>
+
+            <div class="insight-item">
+              <span class="insight-number">02</span>
+              <div>
+                <strong>Focus on the right opportunities</strong>
+                <span>Prioritize improvement work based on expected impact and practical feasibility.</span>
+              </div>
+            </div>
+
+            <div class="insight-item">
+              <span class="insight-number">03</span>
+              <div>
+                <strong>Support implementation</strong>
+                <span>Help teams translate strategy into repeatable operating practices and measurable results.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">What we do</p>
+            <h2>Expertise across the healthcare performance lifecycle.</h2>
+          </div>
+
+          <p class="section-intro">
+            Our services are tailored to your organization’s goals, operating
+            environment, data maturity, and technology landscape.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">01</div>
+            <h3>Strategic Advisory</h3>
+            <p>
+              Clarify strategic priorities, assess growth opportunities,
+              strengthen operating models, and build a practical roadmap for
+              lasting improvement.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">02</div>
+            <h3>Data & Analytics</h3>
+            <p>
+              Connect operational, clinical, and financial information to
+              create performance visibility and support confident decisions.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">03</div>
+            <h3>EHR Optimization</h3>
+            <p>
+              Improve electronic health record workflows, reduce unnecessary
+              administrative burden, and support effective system adoption.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">04</div>
+            <h3>Revenue Cycle</h3>
+            <p>
+              Identify revenue leakage, improve billing and collection
+              processes, and strengthen discipline across the revenue cycle.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="approach">
+      <div class="container">
+        <p class="eyebrow">Our approach</p>
+        <h2>From insight to implementation.</h2>
+        <p class="section-intro">
+          Progress requires more than identifying a problem. Our approach
+          creates a clear path from assessment through adoption and sustained
+          performance management.
+        </p>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <div class="step-number">01</div>
+            <h3>Assess</h3>
+            <p>
+              Review current workflows, systems, data, financial performance,
+              and strategic objectives.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">02</div>
+            <h3>Prioritize</h3>
+            <p>
+              Select opportunities based on urgency, organizational readiness,
+              feasibility, and expected value.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">03</div>
+            <h3>Implement</h3>
+            <p>
+              Create work plans, align stakeholders, establish accountability,
+              and manage change across teams.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <div class="step-number">04</div>
+            <h3>Sustain</h3>
+            <p>
+              Measure outcomes, improve the operating model, and help teams
+              build the capability to continue progress.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="outcomes">
+      <div class="container">
+        <p class="eyebrow">Results that matter</p>
+        <h2>Improve performance without losing sight of people and patients.</h2>
+        <p class="section-intro">
+          We help healthcare organizations create the clarity, discipline, and
+          operating capabilities needed to achieve meaningful results.
+        </p>
+
+        <div class="outcomes-grid">
+          <article class="outcome">
+            <div class="outcome-line"></div>
+            <h3>Efficient workflows</h3>
+            <p>
+              Reduce friction across clinical and administrative processes so
+              teams can focus on higher-value work.
+            </p>
+          </article>
+
+          <article class="outcome">
+            <div class="outcome-line"></div>
+            <h3>Financial visibility</h3>
+            <p>
+              Make revenue, cost, productivity, and performance information
+              easier for leaders to interpret and act on.
+            </p>
+          </article>
+
+          <article class="outcome">
+            <div class="outcome-line"></div>
+            <h3>Technology value</h3>
+            <p>
+              Help organizations get more value from EHR platforms, reporting
+              systems, and operational technology investments.
+            </p>
+          </article>
+
+          <article class="outcome">
+            <div class="outcome-line"></div>
+            <h3>Clear accountability</h3>
+            <p>
+              Establish ownership, governance, and performance routines that
+              keep improvement initiatives moving forward.
+            </p>
+          </article>
+
+          <article class="outcome">
+            <div class="outcome-line"></div>
+            <h3>Better decisions</h3>
+            <p>
+              Give leaders the strategic context and actionable information
+              needed to make sound decisions with confidence.
+            </p>
+          </article>
+
+          <article class="outcome">
+            <div class="outcome-line"></div>
+            <h3>Sustainable change</h3>
+            <p>
+              Build internal capabilities and repeatable practices that support
+              improvement long after the initial engagement ends.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Start a conversation</p>
+          <h2>Ready to improve healthcare performance?</h2>
+          <p class="contact-copy">
+            Tell us about your organization’s priorities. Together, we can
+            identify where focused strategy, data, workflow improvement, and
+            implementation support can create the greatest impact.
+          </p>
+        </div>
+
+        <aside class="contact-card">
+          <h3>Contact Altimeter Healthcare</h3>
+
+          <div class="contact-details">
+            <div class="contact-detail">
+              <strong>Email</strong>
+              info@altimeterhealthcare.com
+            </div>
+
+            <div class="contact-detail">
+              <strong>Phone</strong>
+               (312) 282-0357
+            </div>
+
+            <div class="contact-detail">
+              <strong>Location</strong>
+              8605 Santa Monica Blvd # 64262
+              <br>
+              Los Angeles, CA 90069-4109
+            </div>
+
+            <div class="contact-detail">
+              <strong>Hours</strong>
+              Monday–Friday · 8:30 AM–5:30 PM
+            </div>
+          </div>
+
+          <a
+            class="btn btn-primary"
+            href="mailto:info@altimeterhealthcare.com?subject=Consultation%20Request"
+          >
+            Email Our Team
+          </a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <span>© <span id="year"></span> Altimeter Healthcare Advisory. All rights reserved.</span>
+
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById("siteHeader");
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+    const navItems = navLinks.querySelectorAll("a");
+
+    function updateHeader() {
+      header.classList.toggle("scrolled", window.scrollY > 20);
+    }
+
+    window.addEventListener("scroll", updateHeader);
+    updateHeader();
+
+    menuButton.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", isOpen);
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+    });
+
+    navItems.forEach(function (item) {
+      item.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
